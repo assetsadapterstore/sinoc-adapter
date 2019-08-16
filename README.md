@@ -16,6 +16,9 @@ ServerAPI = "http://127.0.0.1:20035"
 #block chain ID
 ChainID = 1
 
+# fix gas limit
+fixGasLimit = "60000"
+
 # Cache data file directory, default = "", current directory: ./data
 dataDir = ""
 

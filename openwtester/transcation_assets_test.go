@@ -120,17 +120,19 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer_SINOC(t *testing.T) {
 
 	addrs := []string{
-		"0x24c2cc073958ae71a14bab9602a56bd4d09c0d90",
-		"0x3c65ed651b8e34bc600db99ac2b9458995990f88",
-		"0x4f7f8918fac5d8e094688af9b399ed16ce47397b",
-		"0x8b79d6100ce00b11b7dda99ab8e31b135fb4da51",
-		"0x9e9f40f46cfa911cffcdd1b67bb444e6d051340d",
-		"0xa9d3afc28a63077201aa1c35ca69b0330e5f1ec4",
-		"0xc08bd547e62cfbf3518be5337742e1fe423f6d13",
-		"0xd4316e47dc82bb6a4f30dbfb0939bea98ea5491d",
-		"0xd9d5ccaf710070e94400b6e2c51f0d62b665b282",
-		"0xebdfb61bed21b697df6371191847cb0ac6d7229b",
-		"0xf94d77454a8d23989b181da5a55d6b0ae17315fe",
+		//"0x24c2cc073958ae71a14bab9602a56bd4d09c0d90",
+		//"0x3c65ed651b8e34bc600db99ac2b9458995990f88",
+		//"0x4f7f8918fac5d8e094688af9b399ed16ce47397b",
+		//"0x8b79d6100ce00b11b7dda99ab8e31b135fb4da51",
+		//"0x9e9f40f46cfa911cffcdd1b67bb444e6d051340d",
+		//"0xa9d3afc28a63077201aa1c35ca69b0330e5f1ec4",
+		//"0xc08bd547e62cfbf3518be5337742e1fe423f6d13",
+		//"0xd4316e47dc82bb6a4f30dbfb0939bea98ea5491d",
+		//"0xd9d5ccaf710070e94400b6e2c51f0d62b665b282",
+		//"0xebdfb61bed21b697df6371191847cb0ac6d7229b",
+		//"0xf94d77454a8d23989b181da5a55d6b0ae17315fe",
+
+		"0xe2ae83e880af59f190612ec70df9d1c638476a07",
 	}
 
 	tm := testInitWalletManager()
@@ -140,7 +142,7 @@ func TestTransfer_SINOC(t *testing.T) {
 	testGetAssetsAccountBalance(tm, walletID, accountID)
 
 	for _, to := range addrs {
-		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.12345", "", nil)
+		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "32.34567", "", nil)
 		if err != nil {
 			return
 		}
@@ -182,7 +184,7 @@ func TestTransfer_ERC20(t *testing.T) {
 
 	testGetAssetsAccountTokenBalance(tm, walletID, accountID, contract)
 
-	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "2.3", "", &contract)
+	rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "12.34567", "", &contract)
 	if err != nil {
 		return
 	}
